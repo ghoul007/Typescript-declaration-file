@@ -1,26 +1,22 @@
-'use strict';
-
-const path = require('path');
-
 module.exports = {
     entry: './app/Communicator.ts',
+    devtool: 'inline-source-map',
+    module: {
+        rules: [{
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/
+        }]
+    },
+    resolve: {
+
+        modules: ["communicatorModularUMD",  "communicatorModularAMD", "communicatorModalCJS"],
+        extensions: ['.tsx', '.ts', '.js']
+    },
     output: {
         filename: 'bundle.js'
     },
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/
-            }
-        ]
-    },
-    resolve: {
-        extensions: ['.ts', 'js']
-    },
-    devtool: 'inline-source-map',
     devServer: {
         inline: false
     }
-}
+};
