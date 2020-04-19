@@ -9,4 +9,4 @@ class Communicator {
 
 const communicator = new Communicator();
 
-document.body.innerHTML = communicator.greet("hello world");
+document!.body.innerHTML = communicator.greet("hello world");
