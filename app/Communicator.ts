@@ -1,14 +1,16 @@
-import * as _ from "lodash";
+// import * as _ from "lodash";
 
 class Communicator {
     constructor() {
     }
     greet(msg: string) {
-        return "<h1>" + _.toUpper(msg) + "</h1>"
+        // return "<h1>" + _.toUpper(msg) + "</h1>"
+        return communicatorGlobal.greet(msg)
     }
 
 }
 
 const communicator = new Communicator();
 
-document!.body.innerHTML = communicator.greet("hello world");
+document!.body.innerHTML = communicator.greet("hello world!");
+
